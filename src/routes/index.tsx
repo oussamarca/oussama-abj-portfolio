@@ -390,6 +390,11 @@ function Portfolio() {
               <Button asChild size="lg" variant="outline" className="hover:scale-[1.03] transition-transform">
                 <a href="mailto:abdeljebbaroussama51@gmail.com">Contact Me</a>
               </Button>
+              <Button asChild size="lg" variant="secondary" className="hover:scale-[1.03] transition-transform">
+                <a href="/resume.pdf" download>
+                  <Download className="mr-2 h-4 w-4" /> Resume
+                </a>
+              </Button>
             </motion.div>
             <motion.div variants={itemVariants} className="flex items-center gap-3 pt-2">
               <a
