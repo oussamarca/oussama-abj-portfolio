@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Github, Linkedin, Code2, Server, Database, Wrench, Sparkles, Cpu, Bot, ExternalLink, Award, Search, Workflow, MessageSquare, X, ZoomIn, Calendar, Target, Lightbulb, CheckCircle2, AlertTriangle, TrendingUp, FolderGit2, Rocket, Quote, Download } from "lucide-react";
+import { ArrowRight, Mail, Github, Linkedin, Code2, Server, Database, Wrench, Sparkles, Cpu, Bot, ExternalLink, Award, Search, Workflow, MessageSquare, X, ZoomIn, Calendar, Target, Lightbulb, CheckCircle2, AlertTriangle, TrendingUp, FolderGit2, Rocket, Quote, Download, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +11,7 @@ import { Reveal, Stagger, itemVariants } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 import { SkillBar } from "@/components/SkillBar";
 import { FloatingBg } from "@/components/FloatingBg";
+import { useTheme } from "@/components/ThemeProvider";
 import oussamaAsset from "@/assets/oussama.png.asset.json";
 import oilKamoImg from "@/assets/oil-kamo.png";
 import desertPaletteImg from "@/assets/desert-palette.png";
@@ -308,6 +309,7 @@ const stats = [
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
@@ -344,9 +346,18 @@ function Nav() {
             </a>
           ))}
         </div>
-        <Button asChild size="sm" variant="default" className="shadow-glow hover:scale-105 transition-transform">
-          <a href="#contact">Hire me</a>
-        </Button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <Button asChild size="sm" variant="default" className="shadow-glow hover:scale-105 transition-transform">
+            <a href="#contact">Hire me</a>
+          </Button>
+        </div>
       </div>
     </motion.nav>
   );
