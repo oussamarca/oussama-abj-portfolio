@@ -259,10 +259,39 @@ const services = [
   { icon: Bot, title: "Automation & AI", desc: "Creating intelligent workflows and AI-powered systems to improve productivity." },
 ];
 
+type Testimonial = {
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+};
+
+const testimonials: Testimonial[] = [
+  {
+    quote: "Delivered a high-quality web application ahead of schedule. Clean code, great communication, and a real problem-solver.",
+    author: "Client Name",
+    role: "Product Manager",
+    company: "Tech Startup",
+  },
+  {
+    quote: "The automation workflow saved our team 10+ hours per week. Professional, responsive, and deeply technical.",
+    author: "Client Name",
+    role: "Operations Lead",
+    company: "E-commerce Brand",
+  },
+  {
+    quote: "Transformed our outdated site into a modern, fast, and beautiful experience. Highly recommend for any web project.",
+    author: "Client Name",
+    role: "Founder",
+    company: "Design Agency",
+  },
+];
+
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#services", label: "Services" },
+  { href: "#testimonials", label: "Testimonials" },
   { href: "#projects", label: "Projects" },
   { href: "#certificates", label: "Certificates" },
   { href: "#contact", label: "Contact" },
