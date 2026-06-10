@@ -227,6 +227,8 @@ export const Route = createFileRoute("/")({
 
 const skills: Record<string, { name: string; level: number }[]> = {
   Frontend: [
+    { name: "HTML / CSS", level: 98 },
+    { name: "JavaScript", level: 92 },
     { name: "React.js", level: 95 },
     { name: "Next.js", level: 88 },
     { name: "TypeScript", level: 90 },
