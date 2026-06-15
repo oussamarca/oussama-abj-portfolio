@@ -476,7 +476,7 @@ function Portfolio() {
 
 
       {/* Skills */}
-      <section id="skills" className="py-24 px-6 bg-surface/40">
+      <section id="skills" className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14 space-y-3">
             <p className="text-sm uppercase tracking-[0.2em] text-primary">Stack</p>
