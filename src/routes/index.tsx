@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Github, Linkedin, Code2, Server, Database, Wrench, Sparkles, Cpu, Bot, ExternalLink, Award, Search, Workflow, MessageSquare, X, ZoomIn, Calendar, Target, Lightbulb, CheckCircle2, AlertTriangle, TrendingUp, FolderGit2, Rocket, Quote, Download, Sun, Moon } from "lucide-react";
+import { ArrowRight, Mail, Github, Linkedin, Code2, Server, Database, Wrench, Sparkles, Cpu, Bot, ExternalLink, Award, Search, Workflow, MessageSquare, X, ZoomIn, Calendar, Target, Lightbulb, CheckCircle2, AlertTriangle, TrendingUp, FolderGit2, Rocket, Download, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -262,39 +262,11 @@ const services = [
   { icon: Bot, title: "Automation & AI", desc: "Creating intelligent workflows and AI-powered systems to improve productivity." },
 ];
 
-type Testimonial = {
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
-};
-
-const testimonials: Testimonial[] = [
-  {
-    quote: "Delivered a high-quality web application ahead of schedule. Clean code, great communication, and a real problem-solver.",
-    author: "Client Name",
-    role: "Product Manager",
-    company: "Tech Startup",
-  },
-  {
-    quote: "The automation workflow saved our team 10+ hours per week. Professional, responsive, and deeply technical.",
-    author: "Client Name",
-    role: "Operations Lead",
-    company: "E-commerce Brand",
-  },
-  {
-    quote: "Transformed our outdated site into a modern, fast, and beautiful experience. Highly recommend for any web project.",
-    author: "Client Name",
-    role: "Founder",
-    company: "Design Agency",
-  },
-];
 
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#services", label: "Services" },
-  { href: "#testimonials", label: "Testimonials" },
   { href: "#projects", label: "Projects" },
   { href: "#certificates", label: "Certificates" },
   { href: "#contact", label: "Contact" },
@@ -550,32 +522,6 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="py-24 px-6 bg-surface/40">
-        <div className="max-w-6xl mx-auto">
-          <Reveal className="text-center mb-14 space-y-3">
-            <p className="text-sm uppercase tracking-[0.2em] text-primary">Testimonials</p>
-            <h2 className="text-4xl md:text-5xl font-bold">What Clients Say</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Feedback from people I've worked with on projects, automation workflows, and product builds.
-            </p>
-          </Reveal>
-          <Stagger className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <motion.div key={t.author + t.company} variants={itemVariants} whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
-                <Card className="p-8 bg-card border-border/60 hover:border-primary/50 hover:shadow-glow transition-all h-full flex flex-col">
-                  <Quote className="h-8 w-8 text-primary/40 mb-4" />
-                  <p className="text-muted-foreground leading-relaxed flex-1 italic">"{t.quote}"</p>
-                  <div className="mt-6 pt-4 border-t border-border/60">
-                    <p className="font-display font-semibold text-foreground">{t.author}</p>
-                    <p className="text-sm text-muted-foreground">{t.role} · {t.company}</p>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </Stagger>
-        </div>
-      </section>
 
       {/* Projects */}
       <section id="projects" className="py-24 px-6 bg-surface/40">
