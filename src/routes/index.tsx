@@ -609,18 +609,12 @@ function Portfolio() {
       </section>
 
       {/* AI Automation Projects */}
-      <section id="ai-automation" className="relative py-24 px-6 overflow-hidden" style={{ backgroundColor: "#050816" }}>
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-blue-500/20 blur-[120px]" />
-          <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-purple-500/20 blur-[120px]" />
-        </div>
-        <div className="relative max-w-6xl mx-auto">
+      <section id="ai-automation" className="py-24 px-6 bg-surface/40">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14 space-y-3">
-            <p className="text-sm uppercase tracking-[0.2em] bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Automation & AI</p>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent animate-[fade-in_0.6s_ease-out]">
-              AI Automation Projects
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
+            <p className="text-sm uppercase tracking-[0.2em] text-primary">Automation & AI</p>
+            <h2 className="text-4xl md:text-5xl font-bold">AI Automation Projects</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Production-grade workflows combining n8n, LLMs, and modern APIs to automate real business processes.
             </p>
           </div>
@@ -628,30 +622,30 @@ function Portfolio() {
             {aiProjects.map((p) => {
               const Icon = p.icon;
               return (
-                <button key={p.title} onClick={() => setActiveAi(p)} className="text-left group relative rounded-2xl p-[1px] bg-gradient-to-br from-blue-500/40 via-indigo-500/20 to-purple-500/40 hover:from-blue-400/80 hover:to-purple-400/80 transition-all duration-500">
-                  <div className="relative h-full rounded-2xl bg-slate-950/80 backdrop-blur-xl border border-white/5 overflow-hidden flex flex-col group-hover:-translate-y-1.5 transition-transform duration-500 group-hover:shadow-[0_20px_60px_-15px_rgba(99,102,241,0.5)]">
-                    <div className="aspect-video relative overflow-hidden bg-slate-900">
+                <button key={p.title} onClick={() => setActiveAi(p)} className="text-left group relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-primary/10 to-primary-glow/30 hover:from-primary/60 hover:to-primary-glow/50 transition-all duration-500">
+                  <div className="relative h-full rounded-2xl bg-card backdrop-blur-xl border border-border/60 overflow-hidden flex flex-col group-hover:-translate-y-1.5 transition-transform duration-500 group-hover:shadow-glow">
+                    <div className="aspect-video relative overflow-hidden bg-surface">
                       <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-                      <div className="absolute top-3 left-3 p-2 rounded-lg bg-slate-950/70 backdrop-blur border border-white/10 text-blue-400">
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+                      <div className="absolute top-3 left-3 p-2 rounded-lg bg-card/80 backdrop-blur border border-border/60 text-primary">
                         <Icon className="h-4 w-4" />
                       </div>
                       <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-md bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-md bg-gradient-to-r from-primary to-primary-glow text-primary-foreground">
                           View details <ArrowRight className="h-3 w-3" />
                         </span>
                       </div>
                     </div>
                     <div className="p-6 flex-1 flex flex-col gap-4">
-                      <h3 className="font-display font-semibold text-lg text-white leading-snug">{p.title}</h3>
-                      <p className="text-sm text-slate-400 leading-relaxed line-clamp-3">{p.description}</p>
-                      <div className="rounded-xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 to-purple-500/5 p-3">
-                        <p className="text-[11px] uppercase tracking-wider text-blue-300 font-semibold mb-1">Impact</p>
-                        <p className="text-sm text-slate-300 leading-relaxed">{p.impact}</p>
+                      <h3 className="font-display font-semibold text-lg text-foreground leading-snug">{p.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{p.description}</p>
+                      <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/10 to-primary-glow/5 p-3">
+                        <p className="text-[11px] uppercase tracking-wider text-primary font-semibold mb-1">Impact</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{p.impact}</p>
                       </div>
                       <div className="flex flex-wrap gap-1.5 mt-auto">
                         {p.tags.map((t) => (
-                          <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300">{t}</span>
+                          <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-secondary border border-border/60 text-muted-foreground">{t}</span>
                         ))}
                       </div>
                     </div>
@@ -663,22 +657,22 @@ function Portfolio() {
 
           {/* AI Project Detail Dialog */}
           <Dialog open={!!activeAi} onOpenChange={(o) => !o && setActiveAi(null)}>
-            <DialogContent className="max-w-5xl max-h-[92vh] overflow-y-auto p-0 border-0 bg-[#050816] text-slate-100 animate-[scale-in_0.25s_ease-out]">
+            <DialogContent className="max-w-5xl max-h-[92vh] overflow-y-auto p-0 border-0 bg-background text-foreground animate-[scale-in_0.25s_ease-out]">
               {activeAi && (
                 <div className="relative">
                   {/* Banner */}
-                  <div className="relative aspect-[21/9] overflow-hidden bg-slate-900">
+                  <div className="relative aspect-[21/9] overflow-hidden bg-surface">
                     <img src={activeAi.image} alt={activeAi.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
                       <div className="flex flex-wrap gap-1.5 mb-3">
                         {activeAi.tags.slice(0, 4).map((t) => (
-                          <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-white/10 backdrop-blur border border-white/10 text-slate-200">{t}</span>
+                          <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-secondary/80 backdrop-blur border border-border/60 text-muted-foreground">{t}</span>
                         ))}
                       </div>
                       <DialogHeader className="text-left space-y-2">
-                        <DialogTitle className="font-display text-2xl md:text-4xl bg-gradient-to-r from-blue-300 via-indigo-200 to-purple-300 bg-clip-text text-transparent">{activeAi.title}</DialogTitle>
-                        <DialogDescription className="text-slate-300 text-base md:text-lg max-w-3xl">{activeAi.overview}</DialogDescription>
+                        <DialogTitle className="font-display text-2xl md:text-4xl text-gradient">{activeAi.title}</DialogTitle>
+                        <DialogDescription className="text-muted-foreground text-base md:text-lg max-w-3xl">{activeAi.overview}</DialogDescription>
                       </DialogHeader>
                     </div>
                   </div>
@@ -687,52 +681,52 @@ function Portfolio() {
                     {/* Problem / Solution */}
                     <div className="grid md:grid-cols-2 gap-5">
                       <div className="rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/10 to-orange-500/5 p-5">
-                        <div className="flex items-center gap-2 text-red-300 mb-2"><AlertTriangle className="h-4 w-4" /><p className="text-xs uppercase tracking-wider font-semibold">Problem</p></div>
-                        <p className="text-sm text-slate-300 leading-relaxed">{activeAi.problem}</p>
+                        <div className="flex items-center gap-2 text-red-400 mb-2"><AlertTriangle className="h-4 w-4" /><p className="text-xs uppercase tracking-wider font-semibold">Problem</p></div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{activeAi.problem}</p>
                       </div>
                       <div className="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 to-teal-500/5 p-5">
-                        <div className="flex items-center gap-2 text-emerald-300 mb-2"><Lightbulb className="h-4 w-4" /><p className="text-xs uppercase tracking-wider font-semibold">Solution</p></div>
-                        <p className="text-sm text-slate-300 leading-relaxed">{activeAi.solution}</p>
+                        <div className="flex items-center gap-2 text-emerald-500 mb-2"><Lightbulb className="h-4 w-4" /><p className="text-xs uppercase tracking-wider font-semibold">Solution</p></div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{activeAi.solution}</p>
                       </div>
                     </div>
 
                     {/* Workflow Architecture */}
-                    <div className="rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-purple-500/10 p-6 md:p-8">
-                      <div className="flex items-center gap-2 text-blue-300 mb-4"><Workflow className="h-5 w-5" /><h3 className="font-display font-semibold text-xl text-white">Workflow Architecture</h3></div>
-                      <p className="text-sm text-slate-300 leading-relaxed mb-5">{activeAi.architecture}</p>
-                      <button onClick={() => setZoomImg(activeAi.image)} className="group relative w-full rounded-xl overflow-hidden border border-white/10 bg-slate-900">
+                    <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-primary-glow/10 p-6 md:p-8">
+                      <div className="flex items-center gap-2 text-primary mb-4"><Workflow className="h-5 w-5" /><h3 className="font-display font-semibold text-xl text-foreground">Workflow Architecture</h3></div>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-5">{activeAi.architecture}</p>
+                      <button onClick={() => setZoomImg(activeAi.image)} className="group relative w-full rounded-xl overflow-hidden border border-border/60 bg-surface">
                         <img src={activeAi.image} alt={`${activeAi.title} workflow`} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end p-3">
-                          <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md bg-slate-950/80 backdrop-blur border border-white/10 text-slate-200"><ZoomIn className="h-3.5 w-3.5" /> Click to zoom</span>
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end p-3">
+                          <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md bg-card/80 backdrop-blur border border-border/60 text-foreground"><ZoomIn className="h-3.5 w-3.5" /> Click to zoom</span>
                         </div>
                       </button>
                     </div>
 
                     {/* Technologies */}
                     <div>
-                      <h3 className="font-display font-semibold text-lg text-white mb-3 flex items-center gap-2"><Cpu className="h-4 w-4 text-blue-400" /> Technologies Used</h3>
+                      <h3 className="font-display font-semibold text-lg text-foreground mb-3 flex items-center gap-2"><Cpu className="h-4 w-4 text-primary" /> Technologies Used</h3>
                       <div className="flex flex-wrap gap-2">
                         {activeAi.tags.map((t) => (
-                          <span key={t} className="text-xs px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-500/15 to-purple-500/15 border border-blue-400/20 text-slate-200">{t}</span>
+                          <span key={t} className="text-xs px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/15 to-primary-glow/15 border border-primary/20 text-muted-foreground">{t}</span>
                         ))}
                       </div>
                     </div>
 
                     {/* Features & Challenges */}
                     <div className="grid md:grid-cols-2 gap-5">
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-                        <h3 className="font-display font-semibold text-base text-white mb-3 flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> Key Features</h3>
+                      <div className="rounded-2xl border border-border/60 bg-secondary/30 p-5">
+                        <h3 className="font-display font-semibold text-base text-foreground mb-3 flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> Key Features</h3>
                         <ul className="space-y-2">
                           {activeAi.features.map((f) => (
-                            <li key={f} className="flex gap-2 text-sm text-slate-300"><span className="text-emerald-400 mt-1">▸</span><span>{f}</span></li>
+                            <li key={f} className="flex gap-2 text-sm text-muted-foreground"><span className="text-emerald-500 mt-1">▸</span><span>{f}</span></li>
                           ))}
                         </ul>
                       </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-                        <h3 className="font-display font-semibold text-base text-white mb-3 flex items-center gap-2"><Target className="h-4 w-4 text-amber-400" /> Challenges Faced</h3>
+                      <div className="rounded-2xl border border-border/60 bg-secondary/30 p-5">
+                        <h3 className="font-display font-semibold text-base text-foreground mb-3 flex items-center gap-2"><Target className="h-4 w-4 text-amber-500" /> Challenges Faced</h3>
                         <ul className="space-y-2">
                           {activeAi.challenges.map((c) => (
-                            <li key={c} className="flex gap-2 text-sm text-slate-300"><span className="text-amber-400 mt-1">▸</span><span>{c}</span></li>
+                            <li key={c} className="flex gap-2 text-sm text-muted-foreground"><span className="text-amber-500 mt-1">▸</span><span>{c}</span></li>
                           ))}
                         </ul>
                       </div>
@@ -740,33 +734,33 @@ function Portfolio() {
 
                     {/* Results & Timeline */}
                     <div className="grid md:grid-cols-3 gap-5">
-                      <div className="md:col-span-2 rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-500/10 to-blue-500/5 p-5">
-                        <h3 className="font-display font-semibold text-base text-white mb-3 flex items-center gap-2"><TrendingUp className="h-4 w-4 text-purple-300" /> Results & Impact</h3>
+                      <div className="md:col-span-2 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 to-primary-glow/5 p-5">
+                        <h3 className="font-display font-semibold text-base text-foreground mb-3 flex items-center gap-2"><TrendingUp className="h-4 w-4 text-primary" /> Results & Impact</h3>
                         <ul className="space-y-2">
                           {activeAi.results.map((r) => (
-                            <li key={r} className="flex gap-2 text-sm text-slate-200"><span className="text-purple-300 mt-1">★</span><span>{r}</span></li>
+                            <li key={r} className="flex gap-2 text-sm text-foreground"><span className="text-primary mt-1">★</span><span>{r}</span></li>
                           ))}
                         </ul>
                       </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 flex flex-col justify-center">
-                        <div className="flex items-center gap-2 text-blue-300 mb-1"><Calendar className="h-4 w-4" /><p className="text-xs uppercase tracking-wider font-semibold">Timeline</p></div>
-                        <p className="text-2xl font-display font-bold text-white">{activeAi.timeline}</p>
+                      <div className="rounded-2xl border border-border/60 bg-secondary/30 p-5 flex flex-col justify-center">
+                        <div className="flex items-center gap-2 text-primary mb-1"><Calendar className="h-4 w-4" /><p className="text-xs uppercase tracking-wider font-semibold">Timeline</p></div>
+                        <p className="text-2xl font-display font-bold text-foreground">{activeAi.timeline}</p>
                       </div>
                     </div>
 
                     {/* Actions */}
-                    <div className="flex flex-wrap gap-3 pt-2 border-t border-white/5">
+                    <div className="flex flex-wrap gap-3 pt-2 border-t border-border/60">
                       {activeAi.liveUrl && (
-                        <Button asChild className="bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90 text-white border-0">
+                        <Button asChild className="bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 text-primary-foreground border-0">
                           <a href={activeAi.liveUrl} target="_blank" rel="noopener noreferrer">Live Demo <ExternalLink className="ml-2 h-4 w-4" /></a>
                         </Button>
                       )}
                       {activeAi.repoUrl && (
-                        <Button asChild variant="outline" className="border-white/20 bg-white/5 text-slate-100 hover:bg-white/10">
+                        <Button asChild variant="outline" className="border-border/60 bg-secondary/50 text-foreground hover:bg-secondary">
                           <a href={activeAi.repoUrl} target="_blank" rel="noopener noreferrer"><Github className="mr-2 h-4 w-4" /> GitHub Repository</a>
                         </Button>
                       )}
-                      <Button variant="ghost" onClick={() => setActiveAi(null)} className="text-slate-300 hover:bg-white/5 hover:text-white ml-auto">
+                      <Button variant="ghost" onClick={() => setActiveAi(null)} className="text-muted-foreground hover:bg-secondary hover:text-foreground ml-auto">
                         ← Back to Projects
                       </Button>
                     </div>
@@ -778,13 +772,13 @@ function Portfolio() {
 
           {/* Zoom Lightbox */}
           <Dialog open={!!zoomImg} onOpenChange={(o) => !o && setZoomImg(null)}>
-            <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-[#050816]/95 border-white/10 overflow-hidden">
+            <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-background/95 border-border/60 overflow-hidden">
               <DialogHeader className="sr-only">
                 <DialogTitle>Workflow zoom</DialogTitle>
               </DialogHeader>
               {zoomImg && (
                 <div className="relative w-full h-full overflow-auto">
-                  <button onClick={() => setZoomImg(null)} aria-label="Close zoom" className="absolute top-3 right-3 z-10 p-2 rounded-full bg-slate-950/80 border border-white/10 text-white hover:bg-slate-900">
+                  <button onClick={() => setZoomImg(null)} aria-label="Close zoom" className="absolute top-3 right-3 z-10 p-2 rounded-full bg-card/80 border border-border/60 text-foreground hover:bg-surface">
                     <X className="h-4 w-4" />
                   </button>
                   <img src={zoomImg} alt="Workflow zoomed" className="w-full h-auto object-contain" />
