@@ -267,7 +267,6 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#services", label: "Services" },
-  { href: "#testimonials", label: "Testimonials" },
   { href: "#projects", label: "Projects" },
   { href: "#certificates", label: "Certificates" },
   { href: "#contact", label: "Contact" },
