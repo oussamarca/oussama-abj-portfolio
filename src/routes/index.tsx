@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Github, Linkedin, Code2, Server, Database, Wrench, Sparkles, Cpu, Bot, ExternalLink, Award, Search, Workflow, MessageSquare, X, ZoomIn, Calendar, Target, Lightbulb, CheckCircle2, AlertTriangle, TrendingUp, FolderGit2, Rocket, Quote, Download, Sun, Moon } from "lucide-react";
+import { ArrowRight, Mail, Github, Linkedin, Code2, Server, Database, Wrench, Sparkles, Cpu, Bot, ExternalLink, Award, Search, Workflow, MessageSquare, X, ZoomIn, Calendar, Target, Lightbulb, CheckCircle2, AlertTriangle, TrendingUp, FolderGit2, Rocket, Download, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
