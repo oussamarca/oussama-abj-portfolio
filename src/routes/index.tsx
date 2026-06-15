@@ -341,7 +341,15 @@ function Portfolio() {
   const [activeAi, setActiveAi] = useState<AiProject | null>(null);
   const [zoomImg, setZoomImg] = useState<string | null>(null);
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div
+      className="min-h-screen text-foreground relative overflow-hidden"
+      style={{
+        backgroundColor: "#050816",
+        backgroundImage:
+          "radial-gradient(ellipse 80% 50% at 20% 0%, rgba(59,130,246,0.12), transparent 60%), radial-gradient(ellipse 70% 50% at 80% 30%, rgba(168,85,247,0.10), transparent 60%), radial-gradient(ellipse 60% 50% at 30% 70%, rgba(99,102,241,0.10), transparent 60%), radial-gradient(ellipse 70% 50% at 90% 95%, rgba(217,166,72,0.08), transparent 60%), linear-gradient(180deg, #050816 0%, #07091a 50%, #050816 100%)",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <Nav />
 
       {/* Hero */}
@@ -468,7 +476,7 @@ function Portfolio() {
 
 
       {/* Skills */}
-      <section id="skills" className="py-24 px-6 bg-surface/40">
+      <section id="skills" className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14 space-y-3">
             <p className="text-sm uppercase tracking-[0.2em] text-primary">Stack</p>
@@ -524,7 +532,7 @@ function Portfolio() {
 
 
       {/* Projects */}
-      <section id="projects" className="py-24 px-6 bg-surface/40">
+      <section id="projects" className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14 space-y-3">
             <p className="text-sm uppercase tracking-[0.2em] text-primary">Portfolio</p>
@@ -609,7 +617,7 @@ function Portfolio() {
       </section>
 
       {/* AI Automation Projects */}
-      <section id="ai-automation" className="relative py-24 px-6 overflow-hidden" style={{ backgroundColor: "#050816" }}>
+      <section id="ai-automation" className="relative py-24 px-6 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-blue-500/20 blur-[120px]" />
           <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-purple-500/20 blur-[120px]" />
