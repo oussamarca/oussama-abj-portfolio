@@ -522,32 +522,6 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="py-24 px-6 bg-surface/40">
-        <div className="max-w-6xl mx-auto">
-          <Reveal className="text-center mb-14 space-y-3">
-            <p className="text-sm uppercase tracking-[0.2em] text-primary">Testimonials</p>
-            <h2 className="text-4xl md:text-5xl font-bold">What Clients Say</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Feedback from people I've worked with on projects, automation workflows, and product builds.
-            </p>
-          </Reveal>
-          <Stagger className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <motion.div key={t.author + t.company} variants={itemVariants} whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
-                <Card className="p-8 bg-card border-border/60 hover:border-primary/50 hover:shadow-glow transition-all h-full flex flex-col">
-                  <Quote className="h-8 w-8 text-primary/40 mb-4" />
-                  <p className="text-muted-foreground leading-relaxed flex-1 italic">"{t.quote}"</p>
-                  <div className="mt-6 pt-4 border-t border-border/60">
-                    <p className="font-display font-semibold text-foreground">{t.author}</p>
-                    <p className="text-sm text-muted-foreground">{t.role} · {t.company}</p>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </Stagger>
-        </div>
-      </section>
 
       {/* Projects */}
       <section id="projects" className="py-24 px-6 bg-surface/40">
