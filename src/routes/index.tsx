@@ -617,7 +617,7 @@ function Portfolio() {
       </section>
 
       {/* AI Automation Projects */}
-      <section id="ai-automation" className="relative py-24 px-6 overflow-hidden" style={{ backgroundColor: "#050816" }}>
+      <section id="ai-automation" className="relative py-24 px-6 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-blue-500/20 blur-[120px]" />
           <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-purple-500/20 blur-[120px]" />
