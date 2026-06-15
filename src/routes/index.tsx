@@ -341,7 +341,15 @@ function Portfolio() {
   const [activeAi, setActiveAi] = useState<AiProject | null>(null);
   const [zoomImg, setZoomImg] = useState<string | null>(null);
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div
+      className="min-h-screen text-foreground relative overflow-hidden"
+      style={{
+        backgroundColor: "#050816",
+        backgroundImage:
+          "radial-gradient(ellipse 80% 50% at 20% 0%, rgba(59,130,246,0.12), transparent 60%), radial-gradient(ellipse 70% 50% at 80% 30%, rgba(168,85,247,0.10), transparent 60%), radial-gradient(ellipse 60% 50% at 30% 70%, rgba(99,102,241,0.10), transparent 60%), radial-gradient(ellipse 70% 50% at 90% 95%, rgba(217,166,72,0.08), transparent 60%), linear-gradient(180deg, #050816 0%, #07091a 50%, #050816 100%)",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <Nav />
 
       {/* Hero */}
