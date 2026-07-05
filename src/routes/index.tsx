@@ -528,7 +528,7 @@ function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14 space-y-3">
             <p className="text-sm uppercase tracking-[0.2em] text-primary">Portfolio</p>
-            <h2 className="text-4xl md:text-5xl font-bold">Featured Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">Website Projects</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               A selection of projects that showcase my expertise in software development, web technologies, and problem-solving.
             </p>
