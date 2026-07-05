@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Github, Linkedin, Code2, Server, Database, Wrench, Sparkles, Cpu, Bot, ExternalLink, Award, Search, Workflow, MessageSquare, X, ZoomIn, Calendar, Target, Lightbulb, CheckCircle2, AlertTriangle, TrendingUp, FolderGit2, Rocket, Download, Sun, Moon } from "lucide-react";
+import { ArrowRight, Mail, Github, Linkedin, Code2, Server, Database, Wrench, Sparkles, Cpu, Bot, ExternalLink, Award, Search, Workflow, MessageSquare, X, ZoomIn, Calendar, Target, Lightbulb, CheckCircle2, AlertTriangle, TrendingUp, FolderGit2, Rocket, Download, Sun, Moon, Hand } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +19,7 @@ import cafe38Img from "@/assets/cafe-38.png";
 import aiLeadGenAsset from "@/assets/ai-lead-gen.png.asset.json";
 import aiEcomAsset from "@/assets/ai-ecom-tracking.png.asset.json";
 import aiRagAsset from "@/assets/ai-rag-chatbot.png.asset.json";
+import airDrawingAsset from "@/assets/air-drawing.jpg.asset.json";
 import certAgileBootcamp from "@/assets/cert-agile-bootcamp.png.asset.json";
 import certRanadab from "@/assets/cert-ranadab.png.asset.json";
 import certRamadan from "@/assets/cert-ramadan.png.asset.json";
@@ -149,6 +150,42 @@ const aiProjects: AiProject[] = [
       "Scales to large document sets without code changes",
     ],
     timeline: "3 weeks",
+  },
+  {
+    title: "Air Drawing — AI Hand Gesture Drawing",
+    description:
+      "A Python computer vision app that turns your webcam into a virtual canvas. Using MediaPipe hand tracking and OpenCV, users draw in mid-air with their fingertip — no mouse, no touchscreen, no stylus.",
+    impact: "Enables touch-free, gesture-driven drawing for accessibility, education, and interactive demos.",
+    image: airDrawingAsset.url,
+    icon: Hand,
+    tags: ["Python", "OpenCV", "MediaPipe", "NumPy", "Computer Vision", "AI"],
+    overview:
+      "Air Drawing is a real-time gesture-controlled drawing tool that tracks the user's hand through a standard webcam and translates fingertip motion into strokes on a virtual canvas.",
+    problem:
+      "Traditional drawing interfaces require a mouse, trackpad, or touchscreen — limiting accessibility, natural interaction, and hands-free scenarios like presentations, kiosks, or teaching demos.",
+    solution:
+      "A Python pipeline captures webcam frames with OpenCV, detects 21 hand landmarks per frame with MediaPipe, interprets fingertip position and gestures to switch between draw/erase/idle modes, and renders the resulting strokes onto a live overlay canvas.",
+    architecture:
+      "Webcam capture (OpenCV VideoCapture) → frame flip & color conversion → MediaPipe Hands landmark detection → gesture logic (index-up = draw, index+middle up = pause/select) → NumPy canvas buffer updated per frame → composite overlay rendered back to the OpenCV window in real time.",
+    features: [
+      "Real-time hand tracking via MediaPipe (21 landmarks)",
+      "Draw in the air with your index fingertip",
+      "Gesture-based mode switching (draw, pause, clear)",
+      "Live overlay canvas composited on the webcam feed",
+      "Runs on any laptop with a standard webcam — no extra hardware",
+    ],
+    challenges: [
+      "Stabilizing fingertip coordinates to avoid jittery strokes",
+      "Distinguishing intentional gestures from natural hand movement",
+      "Keeping the render loop smooth at real-time frame rates",
+    ],
+    results: [
+      "Smooth, responsive air-drawing experience on commodity hardware",
+      "Fully touch-free interaction — useful for accessibility and demos",
+      "Clean, dependency-light codebase that's easy to fork and extend",
+    ],
+    timeline: "1 week",
+    repoUrl: "https://github.com/oussamarca/Air-drawing",
   },
 ];
 
