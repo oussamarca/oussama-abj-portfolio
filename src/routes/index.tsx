@@ -829,6 +829,55 @@ function Portfolio() {
         </div>
       </section>
 
+      {/* GitHub Projects */}
+      <section id="github-projects" className="py-24 px-6 bg-surface/40">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14 space-y-3">
+            <p className="text-sm uppercase tracking-[0.2em] text-primary">GitHub Projects</p>
+            <h2 className="text-4xl md:text-5xl font-bold">AIR Drawing</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              AI-powered computer vision applications built with Python, OpenCV, and MediaPipe for real-time gesture recognition and interactive experiences.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {githubProjects.map((p) => {
+              const Icon = p.icon;
+              return (
+                <button key={p.title} onClick={() => setActiveAi(p)} className="text-left group relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-primary/10 to-primary-glow/30 hover:from-primary/60 hover:to-primary-glow/50 transition-all duration-500">
+                  <div className="relative h-full rounded-2xl bg-card backdrop-blur-xl border border-border/60 overflow-hidden flex flex-col group-hover:-translate-y-1.5 transition-transform duration-500 group-hover:shadow-glow">
+                    <div className="aspect-video relative overflow-hidden bg-surface">
+                      <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+                      <div className="absolute top-3 left-3 p-2 rounded-lg bg-card/80 backdrop-blur border border-border/60 text-primary">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-md bg-gradient-to-r from-primary to-primary-glow text-primary-foreground">
+                          View details <ArrowRight className="h-3 w-3" />
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col gap-4">
+                      <h3 className="font-display font-semibold text-lg text-foreground leading-snug">{p.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{p.description}</p>
+                      <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/10 to-primary-glow/5 p-3">
+                        <p className="text-[11px] uppercase tracking-wider text-primary font-semibold mb-1">Impact</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{p.impact}</p>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5 mt-auto">
+                        {p.tags.map((t) => (
+                          <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-secondary border border-border/60 text-muted-foreground">{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Certificates */}
 
       <section id="certificates" className="py-24 px-6">
