@@ -19,6 +19,7 @@ import cafe38Img from "@/assets/cafe-38.png";
 import aiLeadGenAsset from "@/assets/ai-lead-gen.png.asset.json";
 import aiEcomAsset from "@/assets/ai-ecom-tracking.png.asset.json";
 import aiRagAsset from "@/assets/ai-rag-chatbot.png.asset.json";
+import airDrawingAsset from "@/assets/air-drawing.jpg.asset.json";
 import certAgileBootcamp from "@/assets/cert-agile-bootcamp.png.asset.json";
 import certRanadab from "@/assets/cert-ranadab.png.asset.json";
 import certRamadan from "@/assets/cert-ramadan.png.asset.json";
