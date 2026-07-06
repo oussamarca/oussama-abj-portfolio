@@ -308,7 +308,6 @@ const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#projects", label: "Projects" },
   { href: "#certificates", label: "Certificates" },
-  { href: "#contact", label: "Contact" },
 ];
 
 const stats = [
