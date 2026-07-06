@@ -12,7 +12,7 @@ import { Counter } from "@/components/Counter";
 import { SkillBar } from "@/components/SkillBar";
 import { FloatingBg } from "@/components/FloatingBg";
 import { useTheme } from "@/components/ThemeProvider";
-import oussamaAsset from "@/assets/oussama-new.png.asset.json";
+import oussamaAsset from "@/assets/oussama-portrait.png.asset.json";
 import oilKamoImg from "@/assets/oil-kamo.png";
 import desertPaletteImg from "@/assets/desert-palette.png";
 import cafe38Img from "@/assets/cafe-38.png";
