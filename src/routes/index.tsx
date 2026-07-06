@@ -834,7 +834,7 @@ function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14 space-y-3">
             <p className="text-sm uppercase tracking-[0.2em] text-primary">GitHub Projects</p>
-            <h2 className="text-4xl md:text-5xl font-bold">AIR Drawing</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">GitHub projects</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               AI-powered computer vision applications built with Python, OpenCV, and MediaPipe for real-time gesture recognition and interactive experiences.
             </p>
