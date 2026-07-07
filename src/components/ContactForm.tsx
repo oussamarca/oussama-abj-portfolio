@@ -33,14 +33,25 @@ export function ContactForm() {
 
   const onSubmit = async (values: ContactFormValues) => {
     try {
-      await sendContactMessage({ data: values });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const payload = (await res.json().catch(() => null)) as
+        | { success: boolean; error?: string }
+        | null;
+
+      if (!res.ok || !payload?.success) {
+        throw new Error(payload?.error ?? "Request failed");
+      }
+
       setSent(true);
       reset();
-      toast.success("Message sent! I'll get back to you soon.");
+      toast.success("Your message has been sent successfully.");
     } catch (err) {
       console.error(err);
-      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
-      toast.error(message);
+      toast.error("Failed to send your message. Please try again.");
     }
   };
 
