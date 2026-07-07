@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import { sendContactMessage } from "@/lib/contact.functions";
+
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be under 100 characters"),
@@ -33,14 +33,25 @@ export function ContactForm() {
 
   const onSubmit = async (values: ContactFormValues) => {
     try {
-      await sendContactMessage({ data: values });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const payload = (await res.json().catch(() => null)) as
+        | { success: boolean; error?: string }
+        | null;
+
+      if (!res.ok || !payload?.success) {
+        throw new Error(payload?.error ?? "Request failed");
+      }
+
       setSent(true);
       reset();
-      toast.success("Message sent! I'll get back to you soon.");
+      toast.success("Your message has been sent successfully.");
     } catch (err) {
       console.error(err);
-      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
-      toast.error(message);
+      toast.error("Failed to send your message. Please try again.");
     }
   };
 
