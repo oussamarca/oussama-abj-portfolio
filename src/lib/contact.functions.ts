@@ -11,19 +11,24 @@ const contactSchema = z.object({
 export const sendContactMessage = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
-    // Persist every submission so nothing is lost.
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("contact_messages").insert({
-      name: data.name,
-      email: data.email,
-      subject: data.subject,
-      message: data.message,
-    });
+    const GENERIC_ERROR = "Service temporarily unavailable. Please try again later.";
+    try {
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      const { error } = await supabaseAdmin.from("contact_messages").insert({
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+      });
 
-    if (error) {
-      // Do not leak database error details to the client
-      throw new Error("Could not save your message. Please try again.");
+      if (error) {
+        console.error("[contact] insert failed", error);
+        throw new Error(GENERIC_ERROR);
+      }
+
+      return { ok: true };
+    } catch (err) {
+      console.error("[contact] handler error", err);
+      throw new Error(GENERIC_ERROR);
     }
-
-    return { ok: true };
   });
