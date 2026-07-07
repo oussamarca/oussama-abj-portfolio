@@ -21,7 +21,7 @@ export const sendContactMessage = createServerFn({ method: "POST" })
     });
 
     if (error) {
-      console.error("[contact] insert failed", error);
+      // Do not leak database error details to the client
       throw new Error("Could not save your message. Please try again.");
     }
 
