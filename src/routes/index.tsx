@@ -280,9 +280,9 @@ const skills: Record<string, { name: string; level: number }[]> = {
     { name: "REST APIs", level: 92 },
   ],
   Database: [
-    { name: "PostgreSQL", level: 88 },
+    { name: "PostgreSQL", level: 70 },
     { name: "MySQL", level: 85 },
-    { name: "MongoDB", level: 80 },
+    { name: "MongoDB", level: 70 },
   ],
   Tools: [
     { name: "Git / GitHub", level: 95 },
