@@ -276,7 +276,6 @@ const skills: Record<string, { name: string; level: number }[]> = {
   ],
   Backend: [
     { name: "Node.js", level: 90 },
-    { name: "Express.js", level: 88 },
     { name: "Python", level: 82 },
     { name: "REST APIs", level: 92 },
   ],
