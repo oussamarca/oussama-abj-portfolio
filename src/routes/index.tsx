@@ -276,13 +276,14 @@ const skills: Record<string, { name: string; level: number }[]> = {
   ],
   Backend: [
     { name: "Node.js", level: 90 },
+    { name: "Express.js", level: 88 },
     { name: "Python", level: 82 },
     { name: "REST APIs", level: 92 },
   ],
   Database: [
-    { name: "PostgreSQL", level: 70 },
+    { name: "PostgreSQL", level: 88 },
     { name: "MySQL", level: 85 },
-    { name: "MongoDB", level: 70 },
+    { name: "MongoDB", level: 80 },
   ],
   Tools: [
     { name: "Git / GitHub", level: 95 },
